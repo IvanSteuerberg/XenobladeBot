@@ -17,7 +17,7 @@ auth = tweepy.OAuthHandler(APIKEY, SECRET_KEY)
 auth.set_access_token(TOKEN, TOKEN_SECRET)
 client = tweepy.Client(bearer_token=BEARER, consumer_key=APIKEY, consumer_secret=SECRET_KEY, access_token=TOKEN,
                        access_token_secret=TOKEN_SECRET, wait_on_rate_limit=True)
-xenobladeDate = datetime.strptime("01/09/22", '%d/%m/%y')
+xenobladeDate = datetime.strptime("29/07/22", '%d/%m/%y')
 
 
 def xenoblade_timer():
@@ -55,9 +55,9 @@ def xenoblade_timer2():
 
 
 def main():
-    schedule.every(55).minutes.do(xenoblade_timer2)
+    schedule.every(90).minutes.do(xenoblade_timer2)
     time.sleep(5)
-    schedule.every(55).minutes.do(xenoblade_timer)
+    schedule.every(90).minutes.do(xenoblade_timer)
     schedule.every().day.at('12:00').do(xenoblade_timer)
     schedule.every().day.at('20:00').do(xenoblade_timer)
 
